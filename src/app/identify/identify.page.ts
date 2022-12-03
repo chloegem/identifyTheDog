@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GenderService } from '../services/gender.service';
 import { AgeService } from '../services/age.service';
 import { NationalityService } from '../services/nationality.service';
-import { UntypedFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-identify',
@@ -17,9 +18,26 @@ export class IdentifyPage implements OnInit {
   public name ='';
   public temp: any[] | undefined;
 
-  constructor() { }
+  constructor(private genderService:GenderService, private ageService:AgeService, 
+              private nationalityService:NationalityService, private router:Router,
+              private activateRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.activateRoute.paramMap.subscribe(param=>{
+      this.name = param.get('name')?? '';
+    });
+
+    this.genderService.getGender(this.name).subscribe((response) =>{
+      this.gender = response.gender;
+    });
+
+    this.ageService.getAge(this.name).subscribe((response) =>{
+      this.age = response.age;
+    });
+
+    this.nationalityService.getNationality(this.name).subscribe((response) =>{
+      this.temp=response.country;
+    });
   }
 
 }
