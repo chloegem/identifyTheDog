@@ -1,9 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>identify</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content *ngFor="let x of temp">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{gender}}</ion-card-content>
+    <ion-card-content>{{age}}</ion-card-content>
+    <ion-card-content>{{x.country_id}}</ion-card-content>
+  </ion-card>
 </ion-content>

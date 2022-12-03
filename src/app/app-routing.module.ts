@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'identify',
+    path: 'identify/:name',
     loadChildren: () => import('./identify/identify.module').then( m => m.IdentifyPageModule)
   },
 ];

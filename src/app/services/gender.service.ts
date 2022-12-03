@@ -9,7 +9,7 @@ export class GenderService {
 
   constructor(private http:HttpClient) { }
 
-  public getGender(name:string):Observable<any>{
+  getGender(name:string):Observable<any>{
 return this.http.get('https://api.genderize.io?name='+name);
   }
 }

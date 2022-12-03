@@ -1,21 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Identify Dog
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <ion-item>
       <ion-img width="50" height="50" src="{{message}}" alt="Dog"></ion-img>
+    </ion-item>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
+    <ion-item>
     <ion-label position="stacked">Name:</ion-label>
     <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+  </ion-item>
     <ion-button shape="round" (click)="generate()">Identify</ion-button>
   </div>
 </ion-content>

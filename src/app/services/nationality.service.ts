@@ -9,7 +9,7 @@ export class NationalityService {
 
   constructor(private http:HttpClient) { }
 
-  public getNationality(name:string):Observable<any>{
+  getNationality(name:string):Observable<any>{
     return this.http.get('https://api.nationalize.io/?name='+name);
   }
 }

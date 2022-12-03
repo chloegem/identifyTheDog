@@ -20,8 +20,8 @@ export class HomePage {
     });
   }
 
-  public generate(){
-    const name = this.name.replace(/\s/g,'');
+  generate(){
+    const name = this.name.replace(/\s/g, '');
     this.router.navigate([`/identify/${name}`]);
   }
 }
