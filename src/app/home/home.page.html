@@ -1,18 +1,26 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-item>
-      <ion-img width="50" height="50" src="{{message}}" alt="Dog"></ion-img>
+    <ion-item>
+     <h1>Identify The Dog</h1> 
     </ion-item>
-    </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <ion-item>
-    <ion-label position="stacked">Name:</ion-label>
-    <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+  <ion-item>
+    <div id="image">
+  <ion-img src="{{message}}" alt="Dog"></ion-img>
+  </div>
   </ion-item>
+
+  <div id="container">
+    <br>
+    <br>
+    
+    <ion-item>
+      <ion-label position="fixed">Enter Name:</ion-label>
+      <ion-input placeholder="John Doe" [(ngModel)]="name"></ion-input>
+  </ion-item>
+    <br>
     <ion-button shape="round" (click)="generate()">Identify</ion-button>
   </div>
 </ion-content>

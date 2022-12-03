@@ -1,10 +1,36 @@
+<!-- 
 <ion-content *ngFor="let x of temp">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{name}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>{{gender}}</ion-card-content>
-    <ion-card-content>{{age}}</ion-card-content>
-    <ion-card-content>{{x.country_id}}</ion-card-content>
+  <ion-slide>
+    <ion-grid>
+          <ion-row>
+               <ion-col>
+                     <ion-card>
+                      <ion-card-content>{{name}}</ion-card-content>
+                      <ion-card-content>{{age}}</ion-card-content>
+                      <ion-card-content>{{gender}}</ion-card-content>
+                      <ion-card-content>{{x.country_id}}</ion-card-content>
+                     </ion-card>
+                </ion-col>
+           </ion-row>
+     </ion-grid>
+</ion-slide>
+</ion-content> -->
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Identify The Dog</ion-card-title>
+    <br>
+    <ion-card-subtitle>This is a generator to identify the dog's age, gender and nationality.</ion-card-subtitle>
+  </ion-card-header>
   </ion-card>
-</ion-content>
+  <ion-content *ngFor="let x of temp">
+  <ion-card id="des">
+  <ion-card-content>{{name}}</ion-card-content>
+  <ion-card-content>{{age}}</ion-card-content>
+  <ion-card-content>{{gender}}</ion-card-content>
+  <ion-card-content>{{x.country_id}}</ion-card-content>
+</ion-card>
+  </ion-content>
+<ion-card>
+  <ion-button shape="round" (click)="goBack()">Go Back</ion-button>
+</ion-card>

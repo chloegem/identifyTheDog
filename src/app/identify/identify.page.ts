@@ -39,4 +39,8 @@ export class IdentifyPage implements OnInit {
     });
   }
 
+  goBack(){
+    this.router.navigate(['/']);
+  }
+
 }
