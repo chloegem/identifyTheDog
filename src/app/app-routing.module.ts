@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'identify',
+    loadChildren: () => import('./identify/identify.module').then( m => m.IdentifyPageModule)
+  },
 ];
 
 @NgModule({
