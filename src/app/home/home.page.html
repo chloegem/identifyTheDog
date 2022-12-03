@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Identify Dog
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,13 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-img width="50" height="50" src="{{message}}" alt="Dog"></ion-img>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-label position="stacked">Name:</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+    <ion-button shape="round" (click)="generate()">Identify</ion-button>
   </div>
 </ion-content>
